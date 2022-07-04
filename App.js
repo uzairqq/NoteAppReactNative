@@ -1,9 +1,10 @@
 import { StyleSheet, Text, View } from "react-native";
+import Intro from "./app/screens/Intro";
 
 const App = () => {
   return (
     <View>
-      <Text>uzair</Text>
+      <Intro />
     </View>
   );
 };
