@@ -1,8 +1,12 @@
 import { StyleSheet, Text, View } from "react-native";
 
-export default function App() {
-  return <Text>uzair</Text>;
-}
+const App = () => {
+  return (
+    <View>
+      <Text>uzair</Text>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -12,3 +16,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 });
+
+export default App;
