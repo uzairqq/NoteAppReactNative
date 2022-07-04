@@ -1,5 +1,4 @@
 import { StyleSheet, Text, View } from "react-native";
-import Intro from "./app/screens/Intro";
 
 export default function App() {
   return <Text>uzair</Text>;
