@@ -13,6 +13,10 @@ const Intro = () => {
   const [userName, setUserName] = useState();
   console.log(userName);
 
+  const handleOnChange = (text) => {
+    setUserName(text);
+  };
+
   return (
     <>
       <StatusBar hidden />
@@ -21,7 +25,7 @@ const Intro = () => {
         <TextInput
           placeholder="Enter your Name to Continue"
           style={styles.textInput}
-          onChangeText={(text) => setUserName(text)}
+          onChangeText={handleOnChange}
           value={userName}
         />
       </View>
