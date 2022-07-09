@@ -6,10 +6,13 @@ import {
   TextInput,
   View,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import colors from "../misc/colors";
 
 const Intro = () => {
+  const [userName, setUserName] = useState();
+  console.log(userName);
+
   return (
     <>
       <StatusBar hidden />
@@ -18,6 +21,8 @@ const Intro = () => {
         <TextInput
           placeholder="Enter your Name to Continue"
           style={styles.textInput}
+          onChangeText={(text) => setUserName(text)}
+          value={userName}
         />
       </View>
     </>
