@@ -1,21 +1,7 @@
-import { StyleSheet, Text, View } from "react-native";
 import Intro from "./app/screens/Intro";
 
 const App = () => {
-  return (
-    <View>
-      <Intro />
-    </View>
-  );
+  return <Intro />;
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
 
 export default App;
