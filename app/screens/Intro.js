@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import colors from "../misc/colors";
+import RoundIconBtn from "../components/RoundIconBtn";
 
 const Intro = () => {
   const [userName, setUserName] = useState();
@@ -28,6 +29,7 @@ const Intro = () => {
           onChangeText={handleOnChange}
           value={userName}
         />
+        <RoundIconBtn antIconName={"arrowright"} />
       </View>
     </>
   );
