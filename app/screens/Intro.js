@@ -12,7 +12,6 @@ import RoundIconBtn from "../components/RoundIconBtn";
 
 const Intro = () => {
   const [userName, setUserName] = useState();
-  console.log(userName);
 
   const handleOnChange = (text) => {
     setUserName(text);
@@ -29,6 +28,7 @@ const Intro = () => {
           onChangeText={handleOnChange}
           value={userName}
         />
+
         <RoundIconBtn antIconName={"arrowright"} />
       </View>
     </>
@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingLeft: 10,
     fontSize: 20,
+    marginBottom: 10,
   },
   inputTitle: {
     alignSelf: "flex-start",
