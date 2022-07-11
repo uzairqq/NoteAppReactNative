@@ -9,10 +9,18 @@ const RoundIconBtn = ({ antIconName, antSize, antColor }) => {
       name={antIconName}
       size={antSize || 24}
       color={antColor || colors.DARK}
+      style={styles.icon}
     />
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  icon: {
+    backgroundColor: colors.PRIMARY,
+    padding: 20,
+    borderRadius: 50,
+    elevation: 5,
+  },
+});
 
 export default RoundIconBtn;
