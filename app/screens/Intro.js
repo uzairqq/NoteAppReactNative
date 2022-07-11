@@ -11,7 +11,7 @@ import colors from "../misc/colors";
 import RoundIconBtn from "../components/RoundIconBtn";
 
 const Intro = () => {
-  const [userName, setUserName] = useState();
+  const [userName, setUserName] = useState("");
 
   const handleOnChange = (text) => {
     setUserName(text);
@@ -28,8 +28,9 @@ const Intro = () => {
           onChangeText={handleOnChange}
           value={userName}
         />
-
-        <RoundIconBtn antIconName={"arrowright"} />
+        {userName.trim().length > 3 ? (
+          <RoundIconBtn antIconName={"arrowright"} />
+        ) : null}
       </View>
     </>
   );
