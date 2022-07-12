@@ -9,12 +9,17 @@ import {
 import React, { useState } from "react";
 import colors from "../misc/colors";
 import RoundIconBtn from "../components/RoundIconBtn";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Intro = () => {
   const [userName, setUserName] = useState("");
 
   const handleOnChange = (text) => {
     setUserName(text);
+  };
+  const handleSubmit = async () => {
+    const user = { userName: userName };
+    await AsyncStorage.setItem("user", JSON.stringify(user));
   };
 
   return (
@@ -28,8 +33,8 @@ const Intro = () => {
           onChangeText={handleOnChange}
           value={userName}
         />
-        {userName.trim().length > 3 ? (
-          <RoundIconBtn antIconName={"arrowright"} />
+        {userName.trim().length >= 3 ? (
+          <RoundIconBtn antIconName={"arrowright"} onPress={handleSubmit} />
         ) : null}
       </View>
     </>
