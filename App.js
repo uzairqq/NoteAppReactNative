@@ -5,7 +5,6 @@ import NoteScreen from "./app/screens/NoteScreen";
 
 const App = () => {
   const [user, setUser] = useState({});
-  console.log("User:-", user);
 
   const findUser = async () => {
     const fetchedUser = await AsyncStorage.getItem("user");

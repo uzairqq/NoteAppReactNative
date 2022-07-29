@@ -12,8 +12,8 @@ import RoundIconBtn from "../components/RoundIconBtn";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Intro = () => {
-  const [userName, setUserName] = useState("");
-
+  const [userName, setUserName] = useState("Uzair");
+  console.log("State User Name:-", userName);
   const handleOnChange = (text) => {
     setUserName(text);
   };
