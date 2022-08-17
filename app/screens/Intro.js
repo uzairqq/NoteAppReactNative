@@ -6,7 +6,7 @@ import colors from '../misc/colors'
 import RoundIconBtn from '../components/RoundIconBtn'
 
 const Intro = () => {
-    const [user, setUser] = useState();
+    const [user, setUser] = useState("");
     const handleOnChangeText = (text) => {
         setUser(text);
     }
@@ -17,7 +17,10 @@ const Intro = () => {
             <View style={styles.container}>
                 <Text style={styles.inputTitle}>Enter Your Name To Continue</Text>
                 <TextInput value={user} onChangeText={handleOnChangeText} placeholder='Enter Name' style={styles.textInput} />
-                <RoundIconBtn antIconName={"arrowright"} size={21} color={colors.LIGHT} />
+                {user.trim().length > 3 ?
+                    <RoundIconBtn antIconName={"arrowright"} size={21} color={colors.LIGHT} />
+                    : null
+                }
 
             </View>
         </>
