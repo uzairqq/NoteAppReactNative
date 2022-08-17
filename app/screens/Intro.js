@@ -1,16 +1,21 @@
 import { StatusBar, StyleSheet, Text, TextInput, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import Colors from '../misc/colors'
 import { Dimensions } from 'react-native'
 import colors from '../misc/colors'
 
 const Intro = () => {
+    const [user, setUser] = useState();
+    const handleOnChangeText = (text) => {
+        setUser(text);
+    }
+    console.log(user)
     return (
         <>
             <StatusBar hidden />
             <View style={styles.container}>
                 <Text style={styles.inputTitle}>Enter Your Name To Continue</Text>
-                <TextInput placeholder='Enter Name' style={styles.textInput} />
+                <TextInput value={user} onChangeText={handleOnChangeText} placeholder='Enter Name' style={styles.textInput} />
             </View>
         </>
     )
