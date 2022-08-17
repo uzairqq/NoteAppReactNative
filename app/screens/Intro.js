@@ -4,21 +4,29 @@ import Colors from '../misc/colors'
 import { Dimensions } from 'react-native'
 import colors from '../misc/colors'
 import RoundIconBtn from '../components/RoundIconBtn'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const Intro = () => {
-    const [user, setUser] = useState("");
-    const handleOnChangeText = (text) => {
-        setUser(text);
+    const [name, setName] = useState("");
+    const handleOnChangeText = (text) => setName(text);
+    console.log("Global Name:-", name)
+
+    const handleSubmit = async () => {
+        const user =
+            { name: name }
+        console.warn("Befor Settled Async Storage User:-", user);
+        await AsyncStorage.setItem('user', JSON.stringify(user));
+        console.warn("Settled Async Storage User:-", user)
     }
-    console.log(user)
     return (
         <>
             <StatusBar hidden />
             <View style={styles.container}>
                 <Text style={styles.inputTitle}>Enter Your Name To Continue</Text>
-                <TextInput value={user} onChangeText={handleOnChangeText} placeholder='Enter Name' style={styles.textInput} />
-                {user.trim().length > 3 ?
-                    <RoundIconBtn antIconName={"arrowright"} size={21} color={colors.LIGHT} />
+                <TextInput value={name} onChangeText={handleOnChangeText} placeholder='Enter Name' style={styles.textInput} />
+
+                {name.trim().length >= 3 ?
+                    <RoundIconBtn antIconName={"arrowright"} size={21} color={colors.LIGHT} onPress={handleSubmit} />
                     : null
                 }
 
