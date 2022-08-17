@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Colors from '../misc/colors'
 import { Dimensions } from 'react-native'
 import colors from '../misc/colors'
+import RoundIconBtn from '../components/RoundIconBtn'
 
 const Intro = () => {
     const [user, setUser] = useState();
@@ -16,6 +17,8 @@ const Intro = () => {
             <View style={styles.container}>
                 <Text style={styles.inputTitle}>Enter Your Name To Continue</Text>
                 <TextInput value={user} onChangeText={handleOnChangeText} placeholder='Enter Name' style={styles.textInput} />
+                <RoundIconBtn antIconName={"arrowright"} size={21} color={colors.LIGHT} />
+
             </View>
         </>
     )
