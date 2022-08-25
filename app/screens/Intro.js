@@ -9,14 +9,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 const Intro = () => {
     const [name, setName] = useState("");
     const handleOnChangeText = (text) => setName(text);
-    console.log("Global Name:-", name)
 
     const handleSubmit = async () => {
-        const user =
-            { name: name }
-        console.warn("Befor Settled Async Storage User:-", user);
+        const user = { name: name }
         await AsyncStorage.setItem('user', JSON.stringify(user));
-        console.warn("Settled Async Storage User:-", user)
     }
     return (
         <>
