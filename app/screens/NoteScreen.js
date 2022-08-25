@@ -1,6 +1,7 @@
 import { StatusBar, StyleSheet, Text, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import colors from '../misc/colors'
+import SearchBar from '../components/SearchBar';
 
 const NoteScreen = ({ user }) => {
     const [greet, setGreet] = useState('');
@@ -22,6 +23,7 @@ const NoteScreen = ({ user }) => {
             <StatusBar barStyle={'dark-content'} backgroundColor={colors.LIGHT} />
             <View style={styles.container}>
                 <Text style={styles.titleHeader}>{`Good ${greet} ${user}`}</Text>
+                <SearchBar />
             </View>
 
         </>
@@ -31,9 +33,12 @@ const NoteScreen = ({ user }) => {
 export default NoteScreen
 
 const styles = StyleSheet.create({
-    container: {},
+    container: {
+        paddingHorizontal: 20
+    },
     titleHeader: {
         fontSize: 25,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginLeft: 5
     }
 })
